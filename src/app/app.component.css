@@ -6,3 +6,15 @@
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
 }
+.modalButton {
+  text-align: end;
+  justify-content: end;
+}
+.modalButton button {
+  border: 1px solid rgb(145, 158, 184);
+  background-color: rgb(145, 158, 184);
+  color: white;
+  padding: 5px;
+  width: 100px;
+  height: 40px;
+}

@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ModalComponent } from './modal/modal/modal.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, ModalComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   // we use the BsModalService to gain access to ngx-bootstrap modal component
@@ -53,9 +54,9 @@ export class AppComponent implements OnInit {
 
   openModal(viewUserTemplate: TemplateRef<any>, userId: number) {
     if (userId) {
-      this.modalRef = this.modalService.show(viewUserTemplate);
       this.user = this.userData.find((x) => x.id === userId);
       console.log(this.user);
+      this.modalRef = this.modalService.show(viewUserTemplate);
     }
   }
   exitModal() {

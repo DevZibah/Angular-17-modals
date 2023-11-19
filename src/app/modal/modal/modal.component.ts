@@ -11,4 +11,5 @@ import { AppComponent } from '../../app.component';
 })
 export class ModalComponent {
   @Input() user: any; 
+  @Input() exitModal: any; 
 }

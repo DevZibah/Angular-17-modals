@@ -1,4 +1,4 @@
-<section class="p-3">
+<section class="p-5">
   <div class="grid">
     <p class="">S/N</p>
     <p class="">First Name</p>
@@ -9,7 +9,7 @@
 
   <main>
     @for (user of userData; track user.id) {
-    <div class="grid">
+    <div class="grid mt-3">
       <p class="">{{ user.id }}</p>
       <p class="" (click)="openModal(viewUserTemplate, user.id)" class="cursor">
         {{ user.firstName }}
@@ -36,6 +36,12 @@
       <p>User does not exist</p>
       }
     </div>
+    <div class="modalButton mb-3">
+      <button (click)="exitModal()">close</button>
+    </div>
   </ng-template> -->
-  <app-modal [user]="user" />
+
+  <ng-template #viewUserTemplate>
+    <app-modal [user]="user" , [exitModal]="exitModal()" />
+  </ng-template>
 </section>
