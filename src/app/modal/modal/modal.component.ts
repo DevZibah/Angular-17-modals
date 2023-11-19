@@ -9,10 +9,7 @@ import { AppComponent } from '../../app.component';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent {
   @Input() user: any;
   @Input() exitModal = (): void => {};
-  ngOnInit(): void {
-    this.exitModal();
-  }
 }
