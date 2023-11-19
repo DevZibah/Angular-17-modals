@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from '../../app.component';
 
@@ -9,7 +9,10 @@ import { AppComponent } from '../../app.component';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css',
 })
-export class ModalComponent {
-  @Input() user: any; 
-  @Input() exitModal: any; 
+export class ModalComponent implements OnInit {
+  @Input() user: any;
+  @Input() exitModal = (): void => {};
+  ngOnInit(): void {
+    this.exitModal();
+  }
 }

@@ -59,7 +59,8 @@ export class AppComponent implements OnInit {
       this.modalRef = this.modalService.show(viewUserTemplate);
     }
   }
-  exitModal() {
+  exitModal = (): void => {
     this.modalRef?.hide();
-  }
+    console.log('this is close button');
+  };
 }
